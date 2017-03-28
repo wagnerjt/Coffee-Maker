@@ -1,4 +1,4 @@
-# MEAT
+	# Coffee Maker
 
 CM - CoffeeMaker System
 
@@ -9,7 +9,7 @@ ___
 
 ###*Dependencies*
   * Java Run-Time Environment 6+
-  * JUnit 4+ testing framework
+  * JUnit 3+ testing framework
   * Emma benchmarking suite
 
 ###*Paths*

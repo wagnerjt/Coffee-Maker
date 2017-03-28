@@ -6,13 +6,18 @@ package test;
  */
 public final class Constants
 {
+	//Global Constants
+	public static final String STRING_EMPTY = "";
+	
 	//Recipe Values
-	public static final String RECIPE_NAME = "Brews with Booze";
-	public static final int RECIPE_PRICE = 3;
-	public static final int RECIPE_AMTCOFFEE = 1;
-	public static final int RECIPE_AMTMILK = 0;
-	public static final int RECIPE_AMTSUGAR = 0;
-	public static final int RECIPE_AMTCHOCOLATE = 10;
+	public static final String RECIPE_NAME_DEFUALT = "Brews with Booze";
+	public static final String RECIPE_NAME_NEW = "Espresso";
+	
+	public static final int RECIPE_PRICE_DEFAULT = 3;
+	public static final int RECIPE_AMTCOFFEE_DEFAULT = 1;
+	public static final int RECIPE_AMTMILK_DEFAULT = 0;
+	public static final int RECIPE_AMTSUGAR_DEFAULT = 0;
+	public static final int RECIPE_AMTCHOCOLATE_DEFAULT = 10;
 	
 	
 	

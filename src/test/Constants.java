@@ -6,6 +6,16 @@ package test;
  */
 public final class Constants
 {
+	//Recipe Values
+	public static final String RECIPE_NAME = "Brews with Booze";
+	public static final int RECIPE_PRICE = 3;
+	public static final int RECIPE_AMTCOFFEE = 1;
+	public static final int RECIPE_AMTMILK = 0;
+	public static final int RECIPE_AMTSUGAR = 0;
+	public static final int RECIPE_AMTCHOCOLATE = 10;
+	
+	
+	
 	//Items in Databases
 	public static final int NUMBER_EMPLOYEES = 7;
 	public static final int NUMBER_ROOMS = 7;
@@ -19,7 +29,6 @@ public final class Constants
 	public static final String TEST_FILE = ".testFile.txt";
 	public static final String TEST_SCRIPT = "src/resources/sampleScript.json";
 	public static final String TEST_DIR = ".test/";
-	
 	
 	//Dates and Times
 	public static final String DATE_VALID_BEFORE = "11292016";

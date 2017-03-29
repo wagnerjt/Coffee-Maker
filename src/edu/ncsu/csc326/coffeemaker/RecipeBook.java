@@ -58,9 +58,9 @@ public class RecipeBook {
 	 * @return String
 	 */
 	public synchronized String deleteRecipe(int recipeToDelete) {
-		if (recipeArray[recipeToDelete] != null) {
+		if (inBounds(recipeToDelete) && recipeArray[recipeToDelete] != null) {
 			String recipeName = recipeArray[recipeToDelete].getName();
-			recipeArray[recipeToDelete] = new Recipe();
+			recipeArray[recipeToDelete] = null;
 			return recipeName;
 		} else {
 			return null;
@@ -75,9 +75,8 @@ public class RecipeBook {
 	 * @return String
 	 */
 	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
-		if (recipeArray[recipeToEdit] != null) {
+		if (inBounds(recipeToEdit) && recipeArray[recipeToEdit] != null) {
 			String recipeName = recipeArray[recipeToEdit].getName();
-			newRecipe.setName("");
 			recipeArray[recipeToEdit] = newRecipe;
 			return recipeName;
 		} else {
@@ -85,4 +84,16 @@ public class RecipeBook {
 		}
 	}
 
+	/**
+	 * Returns true if the index is within the array's bounds.
+	 * Otherwise return false.
+	 * @param index
+	 * @return
+	 */
+	private synchronized boolean inBounds(int index)
+	{
+		if(index < 0 || index >= recipeArray.length)
+			return false;
+		return true;
+	}
 }

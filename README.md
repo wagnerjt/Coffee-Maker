@@ -9,7 +9,7 @@ ___
 
 ### *Dependencies*
   * Java Run-Time Environment 6+
-  * JUnit 3+ testing framework
+  * JUnit 4+ testing framework
   * Emma benchmarking suite
 
 ### *Paths*

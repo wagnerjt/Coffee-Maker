@@ -7,6 +7,7 @@ import org.junit.*;
 import edu.ncsu.csc326.coffeemaker.CoffeeMaker;
 import edu.ncsu.csc326.coffeemaker.Recipe;
 import edu.ncsu.csc326.coffeemaker.exceptions.InventoryException;
+import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
  
 public class CoffeeMakerTest {
     private Recipe valid_rep1;
@@ -34,6 +35,17 @@ public class CoffeeMakerTest {
         valid_rep2.setAmtMilk("3");
         valid_rep2.setAmtSugar("4");
         valid_rep2.setPrice("75");
+       
+        valid_rep3 = new Recipe();
+        valid_rep2.setName("FrappucinoOrHoweverYouSpellIt");
+        valid_rep2.setAmtChocolate("100");
+        valid_rep2.setAmtCoffee("100");
+        valid_rep2.setAmtMilk("300");
+        valid_rep2.setAmtSugar("400");
+        valid_rep2.setPrice("75");
+       
+        valid_rep4 = new Recipe();
+        valid_rep5 = new Recipe();
     }
    
     @Test
@@ -51,7 +63,7 @@ public class CoffeeMakerTest {
     /**
      * Test: add 5 recipes to the coffee maker (an invalid operation - should only accept 3 recipes)
      */
-    public void testAddRecipe5TimesAndNull() {
+    public void testAddRecipe5Times() {
         CoffeeMaker CM = new CoffeeMaker();
        
         try {
@@ -60,6 +72,21 @@ public class CoffeeMakerTest {
             assertEquals("Should return true", true, CM.addRecipe(valid_rep3));
             assertEquals("Should return false", false, CM.addRecipe(valid_rep4));
             assertEquals("Should return false", false, CM.addRecipe(valid_rep5));
+        } catch (Exception e) {
+            fail("Should not throw exception");
+        }
+    }
+   
+    @Test
+    /**
+     * Test: add a null recipes to the coffee maker (an invalid operation)
+     * Expected Behavior: should return false
+     */
+    public void testAddRecipeNull() {
+        CoffeeMaker CM = new CoffeeMaker();
+       
+        try {
+            assertEquals("Should return false", false, CM.addRecipe(null));
         } catch (Exception e) {
             fail("Should not throw exception");
         }
@@ -271,7 +298,14 @@ public class CoffeeMakerTest {
     public void testMakeCoffeeWithNotEnoughInventoryButEnoughPaid() throws InventoryException {
         CoffeeMaker CM = new CoffeeMaker();
         final int AMT_PAID = valid_rep1.getPrice();
-        CM.addRecipe(valid_rep1);
+        Recipe r = new Recipe();
+        try {
+            r.setAmtSugar("900");
+        } catch (RecipeException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        CM.addRecipe(r);
         CM.addInventory("1","1","1","1");
         try {
             assertEquals("User's change should be issued when there is not enough inventory", AMT_PAID, CM.makeCoffee(0, AMT_PAID));
@@ -279,8 +313,4 @@ public class CoffeeMakerTest {
             fail("Should not fail");
         }
     }
-   
-   
-   
-   
 }

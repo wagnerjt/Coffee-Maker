@@ -42,6 +42,9 @@ public class RecipeBookTest
 		{
 			Assert.assertNull("Fail: Default Constructor created a recipe.", recipe);
 		}
+		
+		//Tests to ensure we have the required number of recipes per book.
+		Assert.assertEquals(listOfRecipes.length, Constants.RECIPE_BOOK_SIZE);
 	}
 	
 	@Test
@@ -106,12 +109,6 @@ public class RecipeBookTest
 		added = recipes.addRecipe(null);
 		//Assert false on adding null
 		Assert.assertTrue(added == false);
-	}
-	
-	//TODO;
-	private Recipe[] genNDifferentRecipes()
-	{
-		return null;
 	}
 	
 	@Test

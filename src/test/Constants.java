@@ -20,6 +20,8 @@ public final class Constants
 	public static final int RECIPE_AMTSUGAR_DEFAULT = 0;
 	public static final int RECIPE_AMTCHOCOLATE_DEFAULT = 10;
 	
+	//RecipeBook
+	public static final int RECIPE_BOOK_SIZE = 3;
 	
 	
 	//Items in Databases

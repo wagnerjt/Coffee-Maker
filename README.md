@@ -18,6 +18,6 @@ ___
   * src/test/ contains all of the JUnit tests
 
 ### *Developers*
-  * Ali Reza
   * Preston Barbare
   * Tyler Wagner
+  * Alireza Salahirad

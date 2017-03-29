@@ -24,6 +24,9 @@ public class RecipeBook {
 	}
 	
 	public synchronized boolean addRecipe(Recipe r) {
+		if(r == null)
+			return false;
+		
 		//Assume recipe doesn't exist in the array until 
 		//find out otherwise
 		boolean exists = false;

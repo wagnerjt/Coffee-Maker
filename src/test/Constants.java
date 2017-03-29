@@ -10,7 +10,8 @@ public final class Constants
 	public static final String STRING_EMPTY = "";
 	
 	//Recipe Values
-	public static final String RECIPE_NAME_DEFUALT = "Brews with Booze";
+	public static final String RECIPE_NAME_DEFAULT = "Brews with Booze";
+	public static final String RECIPE_NAME_DEFAULT_CAPS = "BREWS WITH BOOZE";
 	public static final String RECIPE_NAME_NEW = "Espresso";
 	
 	public static final int RECIPE_PRICE_DEFAULT = 3;

@@ -213,7 +213,7 @@ public class RecipeBookTest
 		
 		//Test editing a valid recipe with a null object
 		editedRecipe = recipes.editRecipe(indexToEdit, null);
-		Assert.assertEquals(editedRecipe, testRecipe.getName());
+		Assert.assertNull(editedRecipe);
 		
 		//Test editing a valid bounds null recipe.
 		editedRecipe = recipes.editRecipe(2, testRecipe);
